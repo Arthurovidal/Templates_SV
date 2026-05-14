@@ -1,0 +1,81 @@
+{
+  "metadata": {
+    "title": "Clinique Espoir — Centre Médical Spécialisé Yaoundé",
+    "description": "Clinique médicale moderne à Yaoundé. Spécialistes en médecine générale, pédiatrie, cardiologie, gynécologie. Urgences 24h/24. Prise de RDV sur WhatsApp.",
+    "keywords": "clinique Yaoundé, médecin spécialiste Cameroun, urgences médicales, pédiatrie, gynécologie"
+  },
+  "urgency": { "text": "🚨 Urgences 24h/24 — +237 233 00 00 00", "cta": "Appeler maintenant" },
+  "nav": {
+    "home": "Accueil", "about": "La clinique", "services": "Spécialités",
+    "team": "Nos médecins", "contact": "Contact",
+    "cta": "Prendre RDV", "emergency": "Urgences"
+  },
+  "hero": {
+    "badge": "Clinique agréée Ministère de la Santé",
+    "headline": "Votre Santé, Notre Engagement",
+    "subheadline": "Médecine moderne · Soins de qualité · Disponibles 24h/24",
+    "description": "La Clinique Espoir réunit une équipe de médecins spécialistes expérimentés pour prendre soin de vous et de votre famille. Des équipements modernes, une approche humaine.",
+    "cta_primary": "Prendre rendez-vous",
+    "cta_whatsapp": "RDV sur WhatsApp",
+    "cta_secondary": "Nos spécialités",
+    "stats": {
+      "patients": { "value": "15000", "suffix": "+", "label": "Patients traités" },
+      "specialists": { "value": "25", "suffix": "", "label": "Médecins spécialistes" },
+      "years": { "value": "12", "suffix" : " ans", "label": "D'expérience" },
+      "open": { "value": "24", "suffix": "h/24", "label": "Urgences ouvertes" }
+    }
+  },
+  "services": {
+    "section_number": "02",
+    "label": "Nos spécialités",
+    "headline": "Des Soins Complets pour Toute la Famille",
+    "items": {
+      "general": { "title": "Médecine Générale", "description": "Consultations, bilans de santé, vaccinations, suivi des maladies chroniques. Votre médecin de famille." },
+      "pediatrie": { "title": "Pédiatrie", "description": "Santé des nourrissons, enfants et adolescents. Vaccinations, croissance, maladies infantiles." },
+      "gynecologie": { "title": "Gynécologie & Maternité", "description": "Suivi de grossesse, accouchements, consultations gynécologiques, planning familial." },
+      "cardiologie": { "title": "Cardiologie", "description": "Bilan cardiaque, ECG, échocardiographie, suivi hypertension et maladies cardiovasculaires." },
+      "radiologie": { "title": "Radiologie & Imagerie", "description": "Radiographies, échographies, scanner. Résultats rapides disponibles le jour même." },
+      "laboratoire": { "title": "Laboratoire d'Analyses", "description": "Analyses sanguines, urinaires, bactériologiques. Résultats en 2 à 24 heures." }
+    }
+  },
+  "team": {
+    "section_number": "03",
+    "label": "Notre équipe médicale",
+    "headline": "Des Spécialistes à Votre Service",
+    "members": {
+      "dr_bello": { "name": "Dr. Fatima Bello", "role": "Directrice médicale — Gynécologie", "bio": "Spécialiste en gynécologie-obstétrique. Formée à Paris et Yaoundé. 15 ans d'expérience." },
+      "dr_mbarga": { "name": "Dr. Eric Mbarga", "role": "Cardiologue", "bio": "Cardiologue interventionnel formé au CHU de Bordeaux. Expert en maladies cardiovasculaires tropicales." },
+      "dr_fouda": { "name": "Dr. Claire Fouda", "role": "Pédiatre", "bio": "Pédiatre spécialisée en nutrition de l'enfant et maladies tropicales. 10 ans de pratique en zones rurales." }
+    }
+  },
+  "testimonials": {
+    "section_number": "04",
+    "label": "Témoignages patients",
+    "headline": "Ils Nous Font Confiance",
+    "items": {
+      "t1": { "content": "J'ai accouché à la Clinique Espoir et l'équipe de Dr. Bello a été extraordinaire. Bienveillance, professionnalisme et modernité. Je recommande à toutes les mamans.", "author": "Marie T.", "location": "Yaoundé, Cameroun", "rating": 5 },
+      "t2": { "content": "Les résultats de mes analyses étaient disponibles en 4 heures. Le laboratoire est très bien équipé et le personnel excellent. Une clinique de niveau international à Yaoundé.", "author": "Patrick N.", "location": "Douala, Cameroun", "rating": 5 }
+    }
+  },
+  "contact": {
+    "section_number": "05",
+    "label": "Contact & Rendez-vous",
+    "headline": "Prendre Rendez-vous",
+    "description": "Consultez nos spécialistes facilement. Rendez-vous par WhatsApp, téléphone ou formulaire.",
+    "whatsapp_cta": "Réserver sur WhatsApp",
+    "emergency_cta": "Appeler les urgences",
+    "form": {
+      "name_label": "Nom complet", "email_label": "Email",
+      "phone_label": "Téléphone", "subject_label": "Motif de consultation",
+      "message_label": "Informations complémentaires",
+      "consent_label": "J'accepte le traitement de mes données médicales pour la prise en charge",
+      "submit": "Envoyer ma demande", "submitting": "Envoi..."
+    }
+  },
+  "footer": {
+    "description": "Clinique médicale spécialisée à Yaoundé. Urgences 24h/24. Équipe de spécialistes certifiés.",
+    "copyright": "© 2025 Clinique Espoir. Tous droits réservés. Agréée Ministère de la Santé du Cameroun.",
+    "whatsapp_cta": "Prendre RDV"
+  },
+  "common": { "learn_more": "En savoir plus", "contact_us": "Nous contacter", "whatsapp": "RDV WhatsApp", "back": "Retour", "loading": "Chargement...", "required_field": "Champ obligatoire" }
+}

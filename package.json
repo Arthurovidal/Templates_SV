@@ -1,0 +1,48 @@
+{
+  "name": "premium-templates",
+  "version": "1.0.0",
+  "private": true,
+  "description": "4 templates vitrines premium pour le marché camerounais et africain",
+  "scripts": {
+    "build": "turbo build",
+    "build:corporate": "turbo build --filter=@template/corporate",
+    "build:sante": "turbo build --filter=@template/sante",
+    "build:immobilier": "turbo build --filter=@template/immobilier",
+    "build:lifestyle": "turbo build --filter=@template/lifestyle",
+    "dev": "turbo dev",
+    "dev:corporate": "turbo dev --filter=@template/corporate",
+    "dev:sante": "turbo dev --filter=@template/sante",
+    "dev:immobilier": "turbo dev --filter=@template/immobilier",
+    "dev:lifestyle": "turbo dev --filter=@template/lifestyle",
+    "dev:all": "turbo dev --parallel",
+    "lint": "turbo lint",
+    "typecheck": "turbo typecheck",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,md,json,css}\" --ignore-path .gitignore",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,md,json,css}\" --ignore-path .gitignore",
+    "clean": "turbo clean",
+    "clean:all": "turbo clean && find . -name 'node_modules' -type d -not -path './.git/*' -prune -exec rm -rf '{}' + 2>/dev/null; find . -name '.next' -type d -prune -exec rm -rf '{}' + 2>/dev/null; echo '✅ Clean complete'",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@template/eslint-config": "workspace:*",
+    "@template/typescript-config": "workspace:*",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.3.0",
+    "prettier": "^3.4.2",
+    "turbo": "^2.3.3"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "packageManager": "pnpm@9.15.4",
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,css,yaml,yml}": [
+      "prettier --write"
+    ]
+  }
+}

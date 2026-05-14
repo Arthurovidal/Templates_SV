@@ -1,0 +1,84 @@
+# ──────────────────────────────────────
+# DEPENDENCIES
+# ──────────────────────────────────────
+node_modules/
+.pnp
+.pnp.js
+
+# ──────────────────────────────────────
+# NEXT.JS
+# ──────────────────────────────────────
+.next/
+out/
+build/
+dist/
+
+# ──────────────────────────────────────
+# TURBOREPO
+# ──────────────────────────────────────
+.turbo/
+
+# ──────────────────────────────────────
+# ENVIRONMENT VARIABLES (CRITIQUE)
+# ──────────────────────────────────────
+.env
+.env.local
+.env.development
+.env.staging
+.env.production
+!.env.example
+# Ne jamais committer les .env réels
+
+# ──────────────────────────────────────
+# LOGS
+# ──────────────────────────────────────
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# ──────────────────────────────────────
+# OS FILES
+# ──────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*~
+
+# ──────────────────────────────────────
+# IDE
+# ──────────────────────────────────────
+.idea/
+*.swp
+*.swo
+.vscode/
+# EXCEPTION: garder les configs partagées VS Code
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+
+# ──────────────────────────────────────
+# TESTS
+# ──────────────────────────────────────
+coverage/
+.nyc_output/
+test-results/
+playwright-report/
+
+# ──────────────────────────────────────
+# DOCKER
+# ──────────────────────────────────────
+# Ne pas ignorer docker-compose.yml
+
+# ──────────────────────────────────────
+# MISC
+# ──────────────────────────────────────
+*.tsbuildinfo
+.eslintcache
+.prettierignore_cache
+vercel.json.bak

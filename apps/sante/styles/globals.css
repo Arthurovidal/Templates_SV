@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * ══════════════════════════════════════════════════════════════
+ * TEMPLATE SANTÉ — Variables CSS Globales
+ *
+ * Palette:
+ * - Fond: #FFFFFF pur + #F0F7FF (bleu très clair = propreté)
+ * - Primaire: #2563EB (bleu confiance, médical international)
+ * - Accent: #10B981 (vert santé, vie, guérison)
+ * - Typographie: Plus Jakarta Sans (douce, lisible, moderne)
+ *
+ * Psychologie: Blanc = propreté/stérilité, Bleu = confiance,
+ * Vert = santé/espoir. Angle doux = bienveillance.
+ * ══════════════════════════════════════════════════════════════
+ */
+
+@layer base {
+  :root {
+    --color-background: 210 40% 98%;        /* #F0F8FF très clair */
+    --color-foreground: 222 47% 11%;        /* #0F172A bleu foncé */
+    --color-primary: 217 91% 60%;           /* #2563EB bleu médical */
+    --color-primary-foreground: 0 0% 100%;
+    --color-secondary: 160 84% 39%;         /* #059669 vert santé */
+    --color-secondary-foreground: 0 0% 100%;
+    --color-accent: 160 84% 39%;            /* #10B981 */
+    --color-accent-foreground: 0 0% 100%;
+    --color-muted: 210 40% 96%;
+    --color-muted-foreground: 215 16% 47%;
+    --color-card: 0 0% 100%;
+    --color-card-foreground: 222 47% 11%;
+    --color-border: 214 32% 91%;            /* Bleu très clair */
+    --color-input: 214 32% 91%;
+    --color-ring: 217 91% 60%;
+    --color-destructive: 0 84% 60%;
+    --color-destructive-foreground: 0 0% 100%;
+
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --radius-xl: 20px;
+    --radius-card: 12px;    /* Coins arrondis = bienveillance */
+
+    --font-display: var(--font-jakarta), 'Helvetica Neue', system-ui, sans-serif;
+    --font-body: var(--font-jakarta), 'Helvetica Neue', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --spacing-section-y: 6rem;
+    --spacing-section-y-sm: 3.5rem;
+
+    --shadow-card: 0 2px 8px rgba(37, 99, 235, 0.06), 0 4px 24px rgba(0,0,0,0.04);
+    --shadow-card-hover: 0 8px 32px rgba(37, 99, 235, 0.12), 0 2px 8px rgba(0,0,0,0.06);
+    --shadow-blue: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  }
+}
+
+@layer base {
+  * { box-sizing: border-box; border-color: hsl(var(--color-border)); }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: hsl(var(--color-background));
+    color: hsl(var(--color-foreground));
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    line-height: 1.65;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.25;
+    color: hsl(var(--color-foreground));
+  }
+
+  h1 { font-size: clamp(1.875rem, 4.5vw, 3.5rem); }
+  h2 { font-size: clamp(1.5rem, 3vw, 2.5rem); }
+  h3 { font-size: clamp(1.2rem, 2vw, 1.75rem); }
+
+  *:focus-visible {
+    outline: 2px solid hsl(var(--color-ring));
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  ::selection {
+    background-color: hsl(217 91% 60% / 0.15);
+    color: hsl(var(--color-foreground));
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .container-template {
+    @apply mx-auto px-4 sm:px-6 lg:px-8;
+    max-width: 1280px;
+  }
+
+  /* Bandeau d'urgence fixe en haut (numéro urgence) */
+  .urgency-banner {
+    @apply fixed top-0 left-0 right-0 z-50;
+    background: hsl(var(--color-primary));
+    color: white;
+    @apply text-sm text-center py-2 px-4;
+  }
+
+  /* Badge spécialité médicale */
+  .badge-specialty {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold;
+    background: hsl(217 91% 60% / 0.1);
+    color: hsl(var(--color-primary));
+  }
+
+  /* Card médecin */
+  .card-doctor {
+    @apply bg-white rounded-[var(--radius-card)] p-6;
+    @apply transition-all duration-200;
+    box-shadow: var(--shadow-card);
+  }
+  .card-doctor:hover { box-shadow: var(--shadow-card-hover); transform: translateY(-2px); }
+
+  .btn-sante-primary {
+    @apply inline-flex items-center justify-center gap-2;
+    @apply px-6 py-3 text-sm font-semibold rounded-[var(--radius-md)];
+    @apply transition-all duration-200;
+    background: hsl(var(--color-primary));
+    color: white;
+  }
+  .btn-sante-primary:hover { @apply opacity-90 -translate-y-0.5; }
+
+  .btn-sante-accent {
+    @apply inline-flex items-center justify-center gap-2;
+    @apply px-6 py-3 text-sm font-semibold rounded-[var(--radius-md)];
+    @apply transition-all duration-200;
+    background: hsl(var(--color-accent));
+    color: white;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .skeleton {
+    background: linear-gradient(90deg,
+      hsl(var(--color-muted)) 25%,
+      hsl(var(--color-border)) 50%,
+      hsl(var(--color-muted)) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+  }
+}

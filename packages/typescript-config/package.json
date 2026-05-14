@@ -1,0 +1,13 @@
+{
+  "name": "@template/typescript-config",
+  "version": "0.0.1",
+  "private": true,
+  "description": "TypeScript configurations partagées",
+  "exports": {
+    "./base": "./base.json",
+    "./nextjs": "./nextjs.json"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
+}

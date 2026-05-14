@@ -1,0 +1,11 @@
+{
+  "metadata": {
+    "title": "English version — coming soon",
+    "description": "Full English translation will be completed in Phase 3-6.",
+    "keywords": "cameroon, africa, template"
+  },
+  "nav": { "home": "Home", "about": "About", "services": "Services", "team": "Team", "contact": "Contact", "cta": "Contact us" },
+  "hero": { "badge": "Premium Template", "headline": "Excellence in Service", "description": "English content coming in Phase 3-6.", "cta_primary": "Contact us", "cta_whatsapp": "WhatsApp us" },
+  "footer": { "description": "Premium template.", "copyright": "© 2025 All rights reserved.", "whatsapp_cta": "Contact us" },
+  "common": { "learn_more": "Learn more", "contact_us": "Contact us", "whatsapp": "WhatsApp", "back": "Back", "loading": "Loading...", "required_field": "Required field" }
+}

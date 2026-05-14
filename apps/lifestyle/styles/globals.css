@@ -1,0 +1,218 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * ══════════════════════════════════════════════════════════════
+ * TEMPLATE LIFESTYLE — Variables CSS Globales
+ *
+ * Palette:
+ * - Fond: #0D0D0D (noir profond, immersif)
+ * - Secondaire: #1A1A1A (cartes, sections)
+ * - Or chaud: #F5C542 (énergie, appétit, désir)
+ * - Crème: #E8D5B7 (naturel, chaleur)
+ * - Typographie display: Bebas Neue (impact, restaurant, mode)
+ * - Typographie body: Lato (lisible sur fond sombre)
+ *
+ * Psychologie: Fond noir = exclusivité, mystère, luxe nocturne.
+ * Or chaud = appétit, émotion, désir. Style Instagram premium.
+ * ══════════════════════════════════════════════════════════════
+ */
+
+@layer base {
+  :root {
+    --color-background: 0 0% 5%;            /* #0D0D0D */
+    --color-foreground: 36 67% 91%;         /* #F5EBD6 crème */
+    --color-primary: 0 0% 5%;
+    --color-primary-foreground: 36 67% 91%;
+    --color-secondary: 0 0% 10%;            /* #1A1A1A */
+    --color-secondary-foreground: 36 67% 91%;
+    --color-accent: 45 90% 61%;             /* #F5C542 or chaud */
+    --color-accent-foreground: 0 0% 5%;
+    --color-muted: 0 0% 12%;
+    --color-muted-foreground: 0 0% 55%;
+    --color-card: 0 0% 8%;                  /* #141414 */
+    --color-card-foreground: 36 67% 91%;
+    --color-border: 0 0% 18%;              /* #2E2E2E */
+    --color-input: 0 0% 15%;
+    --color-ring: 45 90% 61%;              /* Or pour focus */
+    --color-destructive: 0 84% 60%;
+    --color-destructive-foreground: 0 0% 98%;
+
+    /* Crème: pour highlights et détails */
+    --color-cream: 33 52% 82%;             /* #E8D5B7 */
+
+    --radius-sm: 0px;
+    --radius-md: 2px;
+    --radius-lg: 4px;
+    --radius-xl: 8px;
+    --radius-card: 0px;    /* Angles très droits = brutalisme élégant */
+
+    --font-display: var(--font-bebas), 'Impact', sans-serif;
+    --font-body: var(--font-lato), 'Helvetica Neue', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --spacing-section-y: 7rem;
+    --spacing-section-y-sm: 4rem;
+
+    --shadow-card: 0 4px 24px rgba(0,0,0,0.4);
+    --shadow-card-hover: 0 8px 48px rgba(0,0,0,0.6), 0 0 0 1px rgba(245, 197, 66, 0.2);
+    --shadow-glow-gold: 0 0 32px rgba(245, 197, 66, 0.15);
+
+    /* Gradient or pour titres */
+    --gradient-gold: linear-gradient(135deg, #F5C542 0%, #E8B94F 50%, #F5C542 100%);
+    --gradient-dark: linear-gradient(180deg, rgba(13,13,13,0) 0%, rgba(13,13,13,0.9) 100%);
+  }
+}
+
+@layer base {
+  * { box-sizing: border-box; border-color: hsl(var(--color-border)); }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: hsl(var(--color-background));
+    color: hsl(var(--color-foreground));
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+
+  /* Titres en Bebas Neue: impact maximum */
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 400;           /* Bebas Neue n'a que 400 */
+    line-height: 0.95;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: hsl(var(--color-foreground));
+  }
+
+  h4, h5, h6 {
+    font-family: var(--font-body);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    color: hsl(var(--color-muted-foreground));
+  }
+
+  h1 { font-size: clamp(3.5rem, 10vw, 9rem); }
+  h2 { font-size: clamp(2.5rem, 7vw, 6rem); }
+  h3 { font-size: clamp(2rem, 5vw, 4rem); }
+
+  *:focus-visible {
+    outline: 1px solid hsl(var(--color-ring));
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background-color: hsl(45 90% 61% / 0.2);
+    color: hsl(var(--color-foreground));
+  }
+
+  /* Scrollbar sombre */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: hsl(var(--color-background)); }
+  ::-webkit-scrollbar-thumb { background: hsl(var(--color-border)); border-radius: 2px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .container-template {
+    @apply mx-auto px-4 sm:px-6 lg:px-8;
+    max-width: 1440px;
+  }
+
+  /* Texte or gradient (titres héro) */
+  .text-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Ligne de séparation or */
+  .divider-gold {
+    @apply block;
+    width: 40px; height: 1px;
+    background: hsl(var(--color-accent));
+  }
+
+  /* Category tag menu/galerie */
+  .tag-category {
+    @apply inline-flex items-center px-4 py-2 text-xs font-bold tracking-widest uppercase;
+    @apply transition-all duration-200 cursor-pointer;
+    border: 1px solid hsl(var(--color-border));
+    color: hsl(var(--color-muted-foreground));
+    background: transparent;
+  }
+  .tag-category:hover, .tag-category.active {
+    border-color: hsl(var(--color-accent));
+    color: hsl(var(--color-accent));
+  }
+
+  /* Card galerie/menu */
+  .card-lifestyle {
+    @apply relative overflow-hidden;
+    background: hsl(var(--color-card));
+    border-radius: var(--radius-card);
+    @apply transition-all duration-300;
+  }
+  .card-lifestyle:hover { box-shadow: var(--shadow-card-hover); }
+  .card-lifestyle:hover .card-overlay { @apply opacity-100; }
+
+  /* Overlay hover sur galeries */
+  .card-overlay {
+    @apply absolute inset-0 flex items-end justify-start p-6 opacity-0;
+    @apply transition-opacity duration-300;
+    background: var(--gradient-dark);
+  }
+
+  /* Prix menu */
+  .price-menu {
+    @apply font-mono text-lg font-light;
+    color: hsl(var(--color-accent));
+  }
+
+  .btn-lifestyle-primary {
+    @apply inline-flex items-center justify-center gap-3;
+    @apply px-8 py-4 text-sm font-bold tracking-widest uppercase;
+    @apply transition-all duration-300;
+    background: hsl(var(--color-accent));
+    color: hsl(var(--color-accent-foreground));
+    border-radius: var(--radius-md);
+  }
+  .btn-lifestyle-primary:hover { @apply brightness-110 -translate-y-0.5; box-shadow: var(--shadow-glow-gold); }
+
+  .btn-lifestyle-outline {
+    @apply inline-flex items-center justify-center gap-3;
+    @apply px-8 py-4 text-sm font-bold tracking-widest uppercase;
+    @apply transition-all duration-200;
+    background: transparent;
+    color: hsl(var(--color-foreground));
+    border: 1px solid hsl(var(--color-border));
+    border-radius: var(--radius-md);
+  }
+  .btn-lifestyle-outline:hover { border-color: hsl(var(--color-accent)); color: hsl(var(--color-accent)); }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  /* Fond flou pour overlays */
+  .bg-blur-dark {
+    background: rgba(13, 13, 13, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+}

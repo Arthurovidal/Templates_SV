@@ -1,0 +1,195 @@
+{
+  "metadata": {
+    "title": "Dupont & Associés — Cabinet d'Avocats d'Affaires",
+    "description": "Cabinet d'avocats spécialisé en droit des affaires, fiscal et social. Accompagnement juridique de vos projets au Cameroun et en Afrique centrale. Basé à Yaoundé.",
+    "keywords": "cabinet avocat Yaoundé, droit des affaires Cameroun, conseil juridique, fiscal, OHADA"
+  },
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "services": "Services",
+    "team": "Équipe",
+    "contact": "Contact",
+    "cta": "Prendre contact"
+  },
+  "hero": {
+    "badge": "Cabinet certifié OHADA",
+    "headline": "Excellence Juridique au Service de Vos Ambitions",
+    "subheadline": "Droit des affaires · Fiscal · Social · OHADA",
+    "description": "Depuis 2008, Dupont & Associés accompagne les entreprises camerounaises et internationales dans leurs défis juridiques et stratégiques. Une expertise reconnue, une approche humaine.",
+    "cta_primary": "Consulter un avocat",
+    "cta_secondary": "Découvrir nos services",
+    "cta_whatsapp": "Nous écrire sur WhatsApp",
+    "stats": {
+      "clients": { "value": "500", "suffix": "+", "label": "Clients accompagnés" },
+      "years": { "value": "15", "suffix": " ans", "label": "D'expertise" },
+      "success_rate": { "value": "94", "suffix": "%", "label": "Taux de réussite" },
+      "countries": { "value": "12", "suffix": "", "label": "Pays CEMAC" }
+    }
+  },
+  "about": {
+    "section_number": "01",
+    "label": "Notre histoire",
+    "headline": "Une Vision Différente du Droit des Affaires",
+    "description": "Fondé à Yaoundé par Maître Jean-Pierre Dupont, notre cabinet réunit une équipe de juristes multilingues formés dans les plus grandes universités africaines et européennes. Nous croyons que le droit doit être un outil de croissance, pas un frein.",
+    "values": {
+      "integrity": { "title": "Intégrité", "description": "Nous agissons toujours dans l'intérêt exclusif de nos clients, avec transparence et honnêteté absolues." },
+      "expertise": { "title": "Expertise", "description": "Notre équipe se forme en continu aux évolutions du droit OHADA, CEMAC et international." },
+      "proximity": { "title": "Proximité", "description": "Chaque client a un interlocuteur dédié, disponible et réactif pour toutes ses préoccupations." }
+    },
+    "cta": "En savoir plus sur le cabinet"
+  },
+  "services": {
+    "section_number": "02",
+    "label": "Domaines d'expertise",
+    "headline": "Des Solutions Juridiques Adaptées à Vos Enjeux",
+    "description": "Du conseil préventif à la représentation en justice, nous vous accompagnons sur l'ensemble de vos problématiques juridiques.",
+    "items": {
+      "business_law": {
+        "title": "Droit des Affaires",
+        "description": "Création d'entreprises, contrats commerciaux, fusions-acquisitions, joint-ventures. Expertise OHADA reconnue.",
+        "features": ["Création et restructuration de sociétés", "Rédaction et négociation de contrats", "Droit de la concurrence", "Propriété intellectuelle"]
+      },
+      "tax_law": {
+        "title": "Droit Fiscal",
+        "description": "Optimisation fiscale, contrôles fiscaux, prix de transfert, TVA. Conseil personnalisé pour PME et grandes entreprises.",
+        "features": ["Audit et conformité fiscale", "Assistance lors des contrôles", "Optimisation de la structure fiscale", "Conseil en prix de transfert"]
+      },
+      "labor_law": {
+        "title": "Droit Social",
+        "description": "Gestion des relations individuelles et collectives de travail. Rédaction de contrats, licenciements, représentation devant le tribunal.",
+        "features": ["Rédaction de contrats de travail", "Gestion des conflits sociaux", "Représentation au tribunal du travail", "Conseil RH stratégique"]
+      },
+      "arbitration": {
+        "title": "Arbitrage & Médiation",
+        "description": "Résolution des conflits commerciaux par des voies alternatives à la justice étatique. Rapidité et confidentialité.",
+        "features": ["Arbitrage OHADA et international", "Médiation commerciale", "Expertise judiciaire", "Recouvrement de créances"]
+      },
+      "real_estate_law": {
+        "title": "Droit Immobilier",
+        "description": "Sécurisation des transactions immobilières, baux commerciaux, droit de la construction au Cameroun.",
+        "features": ["Due diligence immobilière", "Baux commerciaux et d'habitation", "Litiges fonciers", "Droit de la construction CCAG"]
+      },
+      "banking_finance": {
+        "title": "Banque & Finance",
+        "description": "Structuration d'opérations financières complexes, financements de projets, conformité réglementaire COBAC.",
+        "features": ["Financements de projets", "Garanties et sûretés", "Conformité COBAC", "Financement d'infrastructure"]
+      }
+    },
+    "cta": "Tous nos services"
+  },
+  "team": {
+    "section_number": "03",
+    "label": "Nos avocats",
+    "headline": "Une Équipe d'Excellence à Votre Service",
+    "description": "Nos avocats combinent rigueur académique et expérience terrain pour vous offrir les meilleures solutions.",
+    "members": {
+      "jean_pierre": {
+        "name": "Me Jean-Pierre Dupont",
+        "role": "Associé fondateur",
+        "bio": "Docteur en droit des affaires OHADA, ancien conseiller juridique de la Banque Mondiale. 20 ans d'expérience en Afrique centrale.",
+        "specialties": ["Droit OHADA", "Arbitrage international", "Fusions-acquisitions"]
+      },
+      "amina": {
+        "name": "Me Amina Nkodo",
+        "role": "Associée — Droit fiscal",
+        "bio": "Master en fiscalité internationale (Paris II). Spécialiste des prix de transfert et de l'optimisation fiscale pour les multinationales opérant en Afrique.",
+        "specialties": ["Droit fiscal", "Prix de transfert", "TVA régionale"]
+      },
+      "paul": {
+        "name": "Me Paul Mbassi",
+        "role": "Senior — Droit social",
+        "bio": "Formé à l'ENAM de Yaoundé et à l'Université de Bordeaux. Expert en relations collectives de travail et droit de la sécurité sociale.",
+        "specialties": ["Droit social", "Relations collectives", "Procédures prud'homales"]
+      },
+      "sarah": {
+        "name": "Me Sarah Etoga",
+        "role": "Collaboratrice — Droit des affaires",
+        "bio": "Lauréate du barreau du Cameroun (2019). Spécialisée dans l'accompagnement des startups et PME en phase de croissance.",
+        "specialties": ["Startups & PME", "Propriété intellectuelle", "Droit du numérique"]
+      }
+    }
+  },
+  "testimonials": {
+    "section_number": "04",
+    "label": "Ce que disent nos clients",
+    "headline": "La Confiance de Nos Clients, Notre Plus Grand Honneur",
+    "items": {
+      "t1": {
+        "content": "Dupont & Associés nous a accompagnés tout au long de notre entrée sur le marché camerounais. Leur maîtrise du droit OHADA et leur réseau local ont été déterminants pour la réussite de notre implantation.",
+        "author": "Directeur Général, Groupe industriel français",
+        "company": "PME Internationale",
+        "location": "Implantation à Douala"
+      },
+      "t2": {
+        "content": "Professionnalisme, disponibilité et résultats. Notre litige commercial de 3 ans s'est résolu en 8 mois grâce à leur stratégie d'arbitrage. Je recommande vivement ce cabinet.",
+        "author": "PDG, Société de distribution",
+        "company": "Commerce & Distribution SA",
+        "location": "Yaoundé, Cameroun"
+      },
+      "t3": {
+        "content": "Maître Nkodo a complètement transformé notre structure fiscale. Nous économisons 23% sur notre charge fiscale annuelle, en toute conformité. Un travail remarquable.",
+        "author": "Directrice Financière",
+        "company": "Groupe Agro-alimentaire",
+        "location": "Bafoussam, Cameroun"
+      }
+    }
+  },
+  "contact": {
+    "section_number": "05",
+    "label": "Contact",
+    "headline": "Parlons de Votre Projet",
+    "description": "Nos avocats sont disponibles pour une première consultation. Contactez-nous par le moyen qui vous convient.",
+    "form": {
+      "name_label": "Nom complet",
+      "name_placeholder": "Jean Dupont",
+      "email_label": "Adresse email",
+      "email_placeholder": "jean@entreprise.com",
+      "phone_label": "Téléphone (optionnel)",
+      "phone_placeholder": "+237 6 99 00 00 00",
+      "subject_label": "Objet",
+      "subject_placeholder": "Nature de votre demande",
+      "message_label": "Message",
+      "message_placeholder": "Décrivez brièvement votre situation juridique...",
+      "consent_label": "J'accepte que mes données soient utilisées pour traiter ma demande",
+      "submit": "Envoyer ma demande",
+      "submitting": "Envoi en cours...",
+      "success_title": "Message envoyé !",
+      "success_message": "Nous vous répondrons dans les 24 heures ouvrées.",
+      "error_message": "Une erreur s'est produite. Veuillez réessayer ou nous contacter par WhatsApp."
+    },
+    "info": {
+      "address_label": "Adresse",
+      "address": "Immeuble Le Parc, 3ème étage\nAvenue Kennedy, Bastos\nYaoundé, Cameroun",
+      "phone_label": "Téléphone",
+      "phone": "+237 222 00 00 00",
+      "email_label": "Email",
+      "email": "contact@dupont-associes.cm",
+      "hours_label": "Horaires",
+      "hours": "Lun–Ven: 8h00 – 18h00\nSam: 9h00 – 13h00",
+      "whatsapp_label": "WhatsApp"
+    }
+  },
+  "footer": {
+    "description": "Cabinet d'avocats d'affaires spécialisé en droit OHADA, fiscal et social. Votre partenaire juridique de confiance au Cameroun.",
+    "links": {
+      "services": "Services",
+      "team": "Équipe",
+      "about": "À propos",
+      "contact": "Contact",
+      "privacy": "Politique de confidentialité",
+      "legal": "Mentions légales"
+    },
+    "copyright": "© 2025 Dupont & Associés. Tous droits réservés. Barreau du Cameroun.",
+    "whatsapp_cta": "Nous contacter"
+  },
+  "common": {
+    "learn_more": "En savoir plus",
+    "contact_us": "Nous contacter",
+    "whatsapp": "Écrire sur WhatsApp",
+    "back": "Retour",
+    "loading": "Chargement...",
+    "error_generic": "Une erreur s'est produite",
+    "required_field": "Champ obligatoire"
+  }
+}

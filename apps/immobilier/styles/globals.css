@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * ══════════════════════════════════════════════════════════════
+ * TEMPLATE IMMOBILIER LUXE — Variables CSS Globales
+ *
+ * Palette:
+ * - Fond sombre: #1A1A1A (nuit, luxe, premium)
+ * - Fond clair: #F9F6F0 (crème, noble, chaud)
+ * - Or: #D4AF37 (luxe assumé, patrimoine)
+ * - Typographie display: Cormorant Garamond (editorial, aristocratique)
+ * - Typographie body: Montserrat (propre, data)
+ *
+ * Psychologie: L'acheteur de bien premium veut se projeter dans
+ * un style de vie. Le sombre + or = exclusivité, patrimoine.
+ * ══════════════════════════════════════════════════════════════
+ */
+
+@layer base {
+  :root {
+    /* Mode clair (pages propriétés) */
+    --color-background: 36 33% 97%;         /* #F9F6F0 crème */
+    --color-foreground: 0 0% 10%;           /* #1A1A1A */
+    --color-primary: 0 0% 10%;
+    --color-primary-foreground: 36 33% 97%;
+    --color-secondary: 0 0% 20%;
+    --color-secondary-foreground: 36 33% 97%;
+    --color-accent: 43 64% 52%;             /* #D4AF37 or luxe */
+    --color-accent-foreground: 0 0% 10%;
+    --color-muted: 36 20% 94%;
+    --color-muted-foreground: 0 0% 45%;
+    --color-card: 0 0% 100%;
+    --color-card-foreground: 0 0% 10%;
+    --color-border: 36 20% 88%;
+    --color-input: 36 20% 88%;
+    --color-ring: 43 64% 52%;
+    --color-destructive: 0 84% 60%;
+    --color-destructive-foreground: 0 0% 98%;
+
+    /* Variante sombre (hero, sections premium) */
+    --color-dark-bg: 0 0% 10%;
+    --color-dark-fg: 36 33% 97%;
+
+    --radius-sm: 1px;
+    --radius-md: 2px;
+    --radius-lg: 4px;
+    --radius-xl: 6px;
+    --radius-card: 2px;    /* Angles très droits = luxe minimal */
+
+    --font-display: var(--font-cormorant), 'Georgia', serif;
+    --font-body: var(--font-montserrat), 'Helvetica Neue', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --spacing-section-y: 8rem;
+    --spacing-section-y-sm: 4.5rem;
+
+    --shadow-card: 0 2px 12px rgba(0,0,0,0.08);
+    --shadow-card-hover: 0 12px 48px rgba(0,0,0,0.16);
+    --shadow-gold: 0 0 0 1px rgba(212, 175, 55, 0.4);
+
+    /* Overlay gradient pour les images héro */
+    --overlay-dark: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 100%);
+  }
+}
+
+@layer base {
+  * { box-sizing: border-box; border-color: hsl(var(--color-border)); }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background-color: hsl(var(--color-background));
+    color: hsl(var(--color-foreground));
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 400;         /* Cormorant est naturellement élégant à 400 */
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: hsl(var(--color-foreground));
+  }
+
+  h1 { font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 300; }
+  h2 { font-size: clamp(2rem, 4.5vw, 3.75rem); font-weight: 400; }
+  h3 { font-size: clamp(1.5rem, 2.5vw, 2.25rem); }
+
+  *:focus-visible {
+    outline: 1px solid hsl(var(--color-ring));
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background-color: hsl(43 64% 52% / 0.2);
+    color: hsl(var(--color-foreground));
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .container-template {
+    @apply mx-auto px-4 sm:px-6 lg:px-8;
+    max-width: 1440px;  /* Plus large pour l'immobilier (galeries) */
+  }
+
+  /* Section sombre (hero, featured) */
+  .section-dark {
+    background: hsl(var(--color-dark-bg));
+    color: hsl(var(--color-dark-fg));
+  }
+
+  /* Prix premium */
+  .price-display {
+    @apply font-mono text-2xl font-light tracking-wider;
+    color: hsl(var(--color-accent));
+  }
+
+  /* Badge propriété */
+  .badge-property {
+    @apply inline-flex items-center px-3 py-1 text-xs font-semibold tracking-widest uppercase;
+    background: hsl(var(--color-accent));
+    color: hsl(var(--color-accent-foreground));
+    border-radius: var(--radius-sm);
+  }
+
+  /* Card propriété */
+  .card-property {
+    @apply relative overflow-hidden;
+    background: hsl(var(--color-card));
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    @apply transition-all duration-300;
+  }
+  .card-property:hover { box-shadow: var(--shadow-card-hover); }
+
+  /* Ligne or décorative */
+  .gold-line {
+    @apply block;
+    width: 48px; height: 1px;
+    background: hsl(var(--color-accent));
+  }
+
+  .btn-immo-primary {
+    @apply inline-flex items-center justify-center gap-2;
+    @apply px-8 py-4 text-sm font-semibold tracking-widest uppercase;
+    @apply transition-all duration-300;
+    background: hsl(var(--color-foreground));
+    color: hsl(var(--color-background));
+    border-radius: var(--radius-md);
+    letter-spacing: 0.1em;
+  }
+  .btn-immo-primary:hover { background: hsl(var(--color-accent)); color: hsl(var(--color-foreground)); }
+
+  .btn-immo-outline {
+    @apply inline-flex items-center justify-center gap-2;
+    @apply px-8 py-4 text-sm font-semibold tracking-widest uppercase;
+    @apply transition-all duration-300;
+    background: transparent;
+    color: hsl(var(--color-foreground));
+    border: 1px solid hsl(var(--color-accent));
+    border-radius: var(--radius-md);
+  }
+  .btn-immo-outline:hover { background: hsl(var(--color-accent)); }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .text-gold { color: hsl(var(--color-accent)); }
+  /* Overlay sur images immobilières */
+  .img-overlay::after {
+    content: '';
+    @apply absolute inset-0;
+    background: var(--overlay-dark);
+  }
+}

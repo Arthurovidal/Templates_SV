@@ -1,0 +1,40 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Valide le format des messages de commit (Conventional Commits)
+# Format attendu: type(scope): description
+# Exemples valides:
+#   feat(corporate): add hero section animations
+#   fix(sante): correct contact form validation
+#   chore(deps): update Next.js to 15.2
+#   docs: update README setup instructions
+
+commit_msg=$(cat "$1")
+
+pattern="^(feat|fix|docs|style|refactor|perf|test|chore|ci|build|revert)(\([a-z-]+\))?: .{3,100}$"
+
+if ! echo "$commit_msg" | grep -qE "$pattern"; then
+  echo ""
+  echo "❌ Message de commit invalide: $commit_msg"
+  echo ""
+  echo "✅ Format attendu: type(scope): description"
+  echo ""
+  echo "Types valides:"
+  echo "  feat     → Nouvelle fonctionnalité"
+  echo "  fix      → Correction de bug"
+  echo "  docs     → Documentation"
+  echo "  style    → Formatage (pas de logique)"
+  echo "  refactor → Refactoring"
+  echo "  perf     → Optimisation performance"
+  echo "  test     → Tests"
+  echo "  chore    → Maintenance"
+  echo "  ci       → CI/CD"
+  echo "  build    → Build system"
+  echo ""
+  echo "Exemples:"
+  echo "  feat(corporate): add hero section with animations"
+  echo "  fix(sante): correct WhatsApp link generation"
+  echo "  perf(immobilier): optimize property images loading"
+  echo ""
+  exit 1
+fi

@@ -1,0 +1,64 @@
+# Override pour le développement local
+# Usage: docker compose -f docker-compose.yml -f docker-compose.dev.yml up
+#
+# Différences vs prod:
+# - Pas de build Docker (utilise les sources directement)
+# - Hot reload via volumes montés
+# - Redis port exposé pour debug
+# - Logs verbeux
+
+services:
+  corporate:
+    build:
+      target: deps  # Seulement les deps, pas le build complet
+    command: pnpm turbo dev --filter=@template/corporate
+    volumes:
+      - ./apps/corporate:/app/apps/corporate
+      - ./packages:/app/packages
+      - /app/node_modules
+      - /app/apps/corporate/node_modules
+      - /app/apps/corporate/.next
+    environment:
+      - NODE_ENV=development
+      - NEXT_PUBLIC_CORPORATE_SITE_URL=http://localhost:3001
+
+  sante:
+    build:
+      target: deps
+    command: pnpm turbo dev --filter=@template/sante
+    volumes:
+      - ./apps/sante:/app/apps/sante
+      - ./packages:/app/packages
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - NEXT_PUBLIC_SANTE_SITE_URL=http://localhost:3002
+
+  immobilier:
+    build:
+      target: deps
+    command: pnpm turbo dev --filter=@template/immobilier
+    volumes:
+      - ./apps/immobilier:/app/apps/immobilier
+      - ./packages:/app/packages
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - NEXT_PUBLIC_IMMO_SITE_URL=http://localhost:3003
+
+  lifestyle:
+    build:
+      target: deps
+    command: pnpm turbo dev --filter=@template/lifestyle
+    volumes:
+      - ./apps/lifestyle:/app/apps/lifestyle
+      - ./packages:/app/packages
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - NEXT_PUBLIC_LIFESTYLE_SITE_URL=http://localhost:3004
+
+  redis:
+    ports:
+      - "6379:6379"  # Exposé en dev pour debug avec redis-cli
+    command: redis-server --loglevel verbose

@@ -1,0 +1,195 @@
+{
+  "metadata": {
+    "title": "Dupont & Associates — Business Law Firm",
+    "description": "Specialized law firm in business, tax and labor law. Legal advisory services for your projects in Cameroon and Central Africa. Based in Yaoundé.",
+    "keywords": "law firm Yaoundé, business law Cameroon, legal counsel, tax, OHADA"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "team": "Team",
+    "contact": "Contact",
+    "cta": "Get in touch"
+  },
+  "hero": {
+    "badge": "OHADA Certified Firm",
+    "headline": "Legal Excellence in Service of Your Ambitions",
+    "subheadline": "Business Law · Tax · Labor · OHADA",
+    "description": "Since 2008, Dupont & Associates has guided Cameroonian and international companies through their legal and strategic challenges. Recognized expertise, a human approach.",
+    "cta_primary": "Consult a lawyer",
+    "cta_secondary": "Discover our services",
+    "cta_whatsapp": "Message us on WhatsApp",
+    "stats": {
+      "clients": { "value": "500", "suffix": "+", "label": "Clients served" },
+      "years": { "value": "15", "suffix": " yrs", "label": "Of expertise" },
+      "success_rate": { "value": "94", "suffix": "%", "label": "Success rate" },
+      "countries": { "value": "12", "suffix": "", "label": "CEMAC countries" }
+    }
+  },
+  "about": {
+    "section_number": "01",
+    "label": "Our story",
+    "headline": "A Different Vision of Business Law",
+    "description": "Founded in Yaoundé by Maître Jean-Pierre Dupont, our firm brings together a team of multilingual jurists trained at leading African and European universities. We believe law should be a growth tool, not an obstacle.",
+    "values": {
+      "integrity": { "title": "Integrity", "description": "We always act in the exclusive interest of our clients, with absolute transparency and honesty." },
+      "expertise": { "title": "Expertise", "description": "Our team continuously trains on developments in OHADA, CEMAC and international law." },
+      "proximity": { "title": "Proximity", "description": "Every client has a dedicated, available and responsive contact for all their concerns." }
+    },
+    "cta": "Learn more about the firm"
+  },
+  "services": {
+    "section_number": "02",
+    "label": "Areas of expertise",
+    "headline": "Legal Solutions Tailored to Your Challenges",
+    "description": "From preventive counsel to courtroom representation, we support you across all your legal matters.",
+    "items": {
+      "business_law": {
+        "title": "Business Law",
+        "description": "Company formation, commercial contracts, mergers & acquisitions, joint ventures. Recognized OHADA expertise.",
+        "features": ["Company creation and restructuring", "Contract drafting and negotiation", "Competition law", "Intellectual property"]
+      },
+      "tax_law": {
+        "title": "Tax Law",
+        "description": "Tax optimization, tax audits, transfer pricing, VAT. Personalized advice for SMEs and large companies.",
+        "features": ["Tax audit and compliance", "Support during tax controls", "Tax structure optimization", "Transfer pricing advisory"]
+      },
+      "labor_law": {
+        "title": "Labor Law",
+        "description": "Management of individual and collective labor relations. Contract drafting, dismissals, representation before the tribunal.",
+        "features": ["Employment contract drafting", "Labor dispute management", "Labor court representation", "Strategic HR advisory"]
+      },
+      "arbitration": {
+        "title": "Arbitration & Mediation",
+        "description": "Resolution of commercial disputes through alternative dispute resolution. Speed and confidentiality.",
+        "features": ["OHADA and international arbitration", "Commercial mediation", "Expert testimony", "Debt recovery"]
+      },
+      "real_estate_law": {
+        "title": "Real Estate Law",
+        "description": "Securing real estate transactions, commercial leases, construction law in Cameroon.",
+        "features": ["Real estate due diligence", "Commercial and residential leases", "Land disputes", "Construction law"]
+      },
+      "banking_finance": {
+        "title": "Banking & Finance",
+        "description": "Structuring of complex financial transactions, project financing, COBAC regulatory compliance.",
+        "features": ["Project financing", "Guarantees and securities", "COBAC compliance", "Infrastructure financing"]
+      }
+    },
+    "cta": "All our services"
+  },
+  "team": {
+    "section_number": "03",
+    "label": "Our lawyers",
+    "headline": "A Team of Excellence at Your Service",
+    "description": "Our lawyers combine academic rigor and field experience to offer you the best solutions.",
+    "members": {
+      "jean_pierre": {
+        "name": "Atty. Jean-Pierre Dupont",
+        "role": "Founding Partner",
+        "bio": "Doctor of OHADA Business Law, former World Bank legal advisor. 20 years of experience in Central Africa.",
+        "specialties": ["OHADA Law", "International Arbitration", "M&A"]
+      },
+      "amina": {
+        "name": "Atty. Amina Nkodo",
+        "role": "Partner — Tax Law",
+        "bio": "Master in International Taxation (Paris II). Specialist in transfer pricing and tax optimization for multinationals operating in Africa.",
+        "specialties": ["Tax Law", "Transfer Pricing", "Regional VAT"]
+      },
+      "paul": {
+        "name": "Atty. Paul Mbassi",
+        "role": "Senior — Labor Law",
+        "bio": "Trained at ENAM Yaoundé and the University of Bordeaux. Expert in collective labor relations and social security law.",
+        "specialties": ["Labor Law", "Collective Relations", "Employment Tribunal"]
+      },
+      "sarah": {
+        "name": "Atty. Sarah Etoga",
+        "role": "Associate — Business Law",
+        "bio": "Cameroon Bar laureate (2019). Specialized in supporting startups and SMEs in growth phases.",
+        "specialties": ["Startups & SMEs", "Intellectual Property", "Digital Law"]
+      }
+    }
+  },
+  "testimonials": {
+    "section_number": "04",
+    "label": "Client testimonials",
+    "headline": "The Trust of Our Clients, Our Greatest Honor",
+    "items": {
+      "t1": {
+        "content": "Dupont & Associates guided us throughout our market entry into Cameroon. Their mastery of OHADA law and their local network were decisive for the success of our establishment.",
+        "author": "General Manager, French industrial group",
+        "company": "International SME",
+        "location": "Establishment in Douala"
+      },
+      "t2": {
+        "content": "Professionalism, availability and results. Our 3-year commercial dispute was resolved in 8 months thanks to their arbitration strategy. I highly recommend this firm.",
+        "author": "CEO, Distribution company",
+        "company": "Commerce & Distribution SA",
+        "location": "Yaoundé, Cameroon"
+      },
+      "t3": {
+        "content": "Maître Nkodo completely transformed our tax structure. We save 23% on our annual tax burden, in full compliance. Remarkable work.",
+        "author": "CFO",
+        "company": "Agri-food Group",
+        "location": "Bafoussam, Cameroon"
+      }
+    }
+  },
+  "contact": {
+    "section_number": "05",
+    "label": "Contact",
+    "headline": "Let's Discuss Your Project",
+    "description": "Our lawyers are available for an initial consultation. Contact us through the channel that suits you best.",
+    "form": {
+      "name_label": "Full name",
+      "name_placeholder": "John Doe",
+      "email_label": "Email address",
+      "email_placeholder": "john@company.com",
+      "phone_label": "Phone (optional)",
+      "phone_placeholder": "+237 6 99 00 00 00",
+      "subject_label": "Subject",
+      "subject_placeholder": "Nature of your request",
+      "message_label": "Message",
+      "message_placeholder": "Briefly describe your legal situation...",
+      "consent_label": "I agree that my data will be used to process my request",
+      "submit": "Send my request",
+      "submitting": "Sending...",
+      "success_title": "Message sent!",
+      "success_message": "We will respond within 24 business hours.",
+      "error_message": "An error occurred. Please try again or contact us via WhatsApp."
+    },
+    "info": {
+      "address_label": "Address",
+      "address": "Le Parc Building, 3rd Floor\nKennedy Avenue, Bastos\nYaoundé, Cameroon",
+      "phone_label": "Phone",
+      "phone": "+237 222 00 00 00",
+      "email_label": "Email",
+      "email": "contact@dupont-associates.cm",
+      "hours_label": "Business hours",
+      "hours": "Mon–Fri: 8:00 AM – 6:00 PM\nSat: 9:00 AM – 1:00 PM",
+      "whatsapp_label": "WhatsApp"
+    }
+  },
+  "footer": {
+    "description": "Business law firm specialized in OHADA, tax and labor law. Your trusted legal partner in Cameroon.",
+    "links": {
+      "services": "Services",
+      "team": "Team",
+      "about": "About",
+      "contact": "Contact",
+      "privacy": "Privacy Policy",
+      "legal": "Legal Notice"
+    },
+    "copyright": "© 2025 Dupont & Associates. All rights reserved. Cameroon Bar.",
+    "whatsapp_cta": "Contact us"
+  },
+  "common": {
+    "learn_more": "Learn more",
+    "contact_us": "Contact us",
+    "whatsapp": "Message on WhatsApp",
+    "back": "Back",
+    "loading": "Loading...",
+    "error_generic": "An error occurred",
+    "required_field": "Required field"
+  }
+}

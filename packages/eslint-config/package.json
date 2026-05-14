@@ -1,0 +1,19 @@
+{
+  "name": "@template/eslint-config",
+  "version": "0.0.1",
+  "private": true,
+  "description": "ESLint configuration partagée",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.18.0",
+    "@typescript-eslint/parser": "^8.18.0",
+    "eslint": "^9.16.0",
+    "eslint-config-next": "^15.1.0",
+    "eslint-plugin-jsx-a11y": "^6.10.0",
+    "eslint-plugin-react": "^7.37.0",
+    "eslint-plugin-react-hooks": "^5.0.0"
+  }
+}

@@ -1,0 +1,217 @@
+# ══════════════════════════════════════════════════════════════
+# PREMIUM TEMPLATES — Docker Compose
+#
+# Usage:
+#   Développement : docker compose -f docker-compose.yml -f docker-compose.dev.yml up
+#   Production    : docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+#   Un template   : docker compose up corporate
+#
+# Ports:
+#   corporate  → http://localhost:3001
+#   sante      → http://localhost:3002
+#   immobilier → http://localhost:3003
+#   lifestyle  → http://localhost:3004
+#   nginx      → http://localhost:80 (routing par sous-domaine)
+#   redis      → localhost:6379 (interne seulement)
+# ══════════════════════════════════════════════════════════════
+
+name: premium-templates
+
+services:
+
+  # ── Template 1: Corporate ──────────────────────────────────
+  corporate:
+    build:
+      context: .
+      dockerfile: apps/corporate/Dockerfile
+      target: runner
+    container_name: template-corporate
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=${NODE_ENV:-production}
+      - NEXT_PUBLIC_CORPORATE_SITE_URL=${NEXT_PUBLIC_CORPORATE_SITE_URL}
+      - NEXT_PUBLIC_CORPORATE_SITE_NAME=${NEXT_PUBLIC_CORPORATE_SITE_NAME}
+      - RESEND_API_KEY=${RESEND_API_KEY}
+      - EMAIL_FROM=${EMAIL_FROM}
+      - CORPORATE_CONTACT_EMAIL_TO=${CORPORATE_CONTACT_EMAIL_TO}
+      - NEXT_PUBLIC_CORPORATE_WHATSAPP=${NEXT_PUBLIC_CORPORATE_WHATSAPP}
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - template_network
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3001/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+    labels:
+      - "com.template.name=corporate"
+      - "com.template.version=1.0.0"
+
+  # ── Template 2: Santé ──────────────────────────────────────
+  sante:
+    build:
+      context: .
+      dockerfile: apps/sante/Dockerfile
+      target: runner
+    container_name: template-sante
+    restart: unless-stopped
+    ports:
+      - "3002:3002"
+    environment:
+      - NODE_ENV=${NODE_ENV:-production}
+      - NEXT_PUBLIC_SANTE_SITE_URL=${NEXT_PUBLIC_SANTE_SITE_URL}
+      - NEXT_PUBLIC_SANTE_SITE_NAME=${NEXT_PUBLIC_SANTE_SITE_NAME}
+      - RESEND_API_KEY=${RESEND_API_KEY}
+      - EMAIL_FROM=${EMAIL_FROM}
+      - SANTE_CONTACT_EMAIL_TO=${SANTE_CONTACT_EMAIL_TO}
+      - NEXT_PUBLIC_SANTE_WHATSAPP=${NEXT_PUBLIC_SANTE_WHATSAPP}
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - template_network
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3002/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
+  # ── Template 3: Immobilier ─────────────────────────────────
+  immobilier:
+    build:
+      context: .
+      dockerfile: apps/immobilier/Dockerfile
+      target: runner
+    container_name: template-immobilier
+    restart: unless-stopped
+    ports:
+      - "3003:3003"
+    environment:
+      - NODE_ENV=${NODE_ENV:-production}
+      - NEXT_PUBLIC_IMMO_SITE_URL=${NEXT_PUBLIC_IMMO_SITE_URL}
+      - NEXT_PUBLIC_IMMO_SITE_NAME=${NEXT_PUBLIC_IMMO_SITE_NAME}
+      - RESEND_API_KEY=${RESEND_API_KEY}
+      - EMAIL_FROM=${EMAIL_FROM}
+      - IMMOBILIER_CONTACT_EMAIL_TO=${IMMOBILIER_CONTACT_EMAIL_TO}
+      - NEXT_PUBLIC_IMMO_WHATSAPP=${NEXT_PUBLIC_IMMO_WHATSAPP}
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - template_network
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3003/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
+  # ── Template 4: Lifestyle ──────────────────────────────────
+  lifestyle:
+    build:
+      context: .
+      dockerfile: apps/lifestyle/Dockerfile
+      target: runner
+    container_name: template-lifestyle
+    restart: unless-stopped
+    ports:
+      - "3004:3004"
+    environment:
+      - NODE_ENV=${NODE_ENV:-production}
+      - NEXT_PUBLIC_LIFESTYLE_SITE_URL=${NEXT_PUBLIC_LIFESTYLE_SITE_URL}
+      - NEXT_PUBLIC_LIFESTYLE_SITE_NAME=${NEXT_PUBLIC_LIFESTYLE_SITE_NAME}
+      - RESEND_API_KEY=${RESEND_API_KEY}
+      - EMAIL_FROM=${EMAIL_FROM}
+      - LIFESTYLE_CONTACT_EMAIL_TO=${LIFESTYLE_CONTACT_EMAIL_TO}
+      - NEXT_PUBLIC_LIFESTYLE_WHATSAPP=${NEXT_PUBLIC_LIFESTYLE_WHATSAPP}
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - template_network
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3004/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
+  # ── Nginx: Reverse proxy ───────────────────────────────────
+  nginx:
+    image: nginx:1.27-alpine
+    container_name: template-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./infra/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./infra/nginx/conf.d:/etc/nginx/conf.d:ro
+      - nginx_ssl:/etc/nginx/ssl
+      - nginx_logs:/var/log/nginx
+    depends_on:
+      - corporate
+      - sante
+      - immobilier
+      - lifestyle
+    networks:
+      - template_network
+    healthcheck:
+      test: ["CMD", "nginx", "-t"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  # ── Redis: Cache & Rate limiting ──────────────────────────
+  redis:
+    image: redis:7.4-alpine
+    container_name: template-redis
+    restart: unless-stopped
+    # Port NON exposé à l'extérieur (sécurité)
+    # Pour accès local en dev: commenter la ligne ci-dessous
+    # ports:
+    #   - "6379:6379"
+    command: >
+      redis-server
+      --maxmemory 128mb
+      --maxmemory-policy allkeys-lru
+      --appendonly no
+      --loglevel warning
+    volumes:
+      - redis_data:/data
+    networks:
+      - template_network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+# ── Volumes persistants ────────────────────────────────────
+volumes:
+  redis_data:
+    driver: local
+  nginx_ssl:
+    driver: local
+  nginx_logs:
+    driver: local
+
+# ── Réseau interne ─────────────────────────────────────────
+# Les services communiquent par nom de service (ex: redis://redis:6379)
+# Seuls les ports explicitement mappés sont accessibles de l'extérieur
+networks:
+  template_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
